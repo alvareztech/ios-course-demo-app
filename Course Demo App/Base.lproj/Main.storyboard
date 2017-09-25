@@ -114,7 +114,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Principal" selectedImage="WorkIcon" id="c3T-YR-A5B"/>
+                    <tabBarItem key="tabBarItem" title="Principal" image="WorkIcon" id="c3T-YR-A5B"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xr1-ub-nDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -133,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Contacto" selectedImage="PhoneIcon" id="i0G-Y4-ORi"/>
+                    <tabBarItem key="tabBarItem" title="Contacto" image="PhoneIcon" id="i0G-Y4-ORi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfU-9S-07N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -289,6 +289,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="whz-lI-xCz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="EiE-Ak-fAn">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
