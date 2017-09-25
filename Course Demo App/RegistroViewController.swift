@@ -11,6 +11,8 @@ class RegistroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("viewDidLoad Regitrar")
 
 
         // Colocamos el texto (email) enviado desde la pantalla de log in
@@ -35,6 +37,22 @@ class RegistroViewController: UIViewController {
     
     @IBAction func registrar(_ sender: UIButton) {
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear Regitrar")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear Regitrar")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("viewWillDisappear Regitrar")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("viewDidDisappear Regitrar")
     }
 
 }

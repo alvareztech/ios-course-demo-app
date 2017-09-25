@@ -9,6 +9,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        print("viewDidLoad Log In")
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,6 +71,22 @@ class ViewController: UIViewController {
             return true
         }
         return false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear Log In")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear Log In")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("viewWillDisappear Log In")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("viewDidDisappear Log In")
     }
 
 }
