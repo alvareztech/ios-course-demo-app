@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         
         // Si llegamos hasta aquí, se cumplieron las validaciones
         
-        
+        performSegue(withIdentifier: "miSegue", sender: nil)
         
     }
     

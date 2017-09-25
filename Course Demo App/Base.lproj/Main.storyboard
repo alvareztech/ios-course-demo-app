@@ -96,6 +96,7 @@
                         <outlet property="emailTextField" destination="4uZ-Nt-elr" id="MjY-d0-fCs"/>
                         <outlet property="messageLabel" destination="vva-Yz-Ffe" id="UE0-oY-ZgZ"/>
                         <outlet property="passwordTextField" destination="NaS-cI-G4x" id="f3c-PH-1Ke"/>
+                        <segue destination="whz-lI-xCz" kind="presentation" identifier="miSegue" id="349-5Q-2EF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
