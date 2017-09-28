@@ -16,6 +16,8 @@
 		6A640E441F789B76005CEF16 /* PuntosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A640E431F789B76005CEF16 /* PuntosViewController.swift */; };
 		6A640E461F78A38B005CEF16 /* PrincipalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A640E451F78A38B005CEF16 /* PrincipalViewController.swift */; };
 		6A640E481F78A39D005CEF16 /* ConctactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A640E471F78A39D005CEF16 /* ConctactoViewController.swift */; };
+		6A680D811F79F6DD0073213C /* Persona.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A680D801F79F6DD0073213C /* Persona.swift */; };
+		6A8A71571F7A730600CAFB0F /* ClientesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A71561F7A730600CAFB0F /* ClientesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		6A640E431F789B76005CEF16 /* PuntosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntosViewController.swift; sourceTree = "<group>"; };
 		6A640E451F78A38B005CEF16 /* PrincipalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipalViewController.swift; sourceTree = "<group>"; };
 		6A640E471F78A39D005CEF16 /* ConctactoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConctactoViewController.swift; sourceTree = "<group>"; };
+		6A680D801F79F6DD0073213C /* Persona.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persona.swift; sourceTree = "<group>"; };
+		6A8A71561F7A730600CAFB0F /* ClientesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				6A640E431F789B76005CEF16 /* PuntosViewController.swift */,
 				6A640E451F78A38B005CEF16 /* PrincipalViewController.swift */,
 				6A640E471F78A39D005CEF16 /* ConctactoViewController.swift */,
+				6A680D801F79F6DD0073213C /* Persona.swift */,
+				6A8A71561F7A730600CAFB0F /* ClientesViewController.swift */,
 			);
 			path = "Course Demo App";
 			sourceTree = "<group>";
@@ -153,7 +159,9 @@
 				6A640E461F78A38B005CEF16 /* PrincipalViewController.swift in Sources */,
 				6A640E421F789AF0005CEF16 /* RegistroViewController.swift in Sources */,
 				6A640E301F7895C6005CEF16 /* AppDelegate.swift in Sources */,
+				6A8A71571F7A730600CAFB0F /* ClientesViewController.swift in Sources */,
 				6A640E481F78A39D005CEF16 /* ConctactoViewController.swift in Sources */,
+				6A680D811F79F6DD0073213C /* Persona.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
