@@ -190,7 +190,7 @@
             </objects>
             <point key="canvasLocation" x="972" y="871.21439280359823"/>
         </scene>
-        <!--Item-->
+        <!--Clientes-->
         <scene sceneID="lIa-oG-E17">
             <objects>
                 <viewController id="lRZ-Fz-awt" customClass="ClientesViewController" customModule="Course_Demo_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -247,7 +247,7 @@
                             <constraint firstAttribute="trailing" secondItem="H3e-uz-S6q" secondAttribute="trailing" id="uyv-yo-DXA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="6Xs-hV-b3l"/>
+                    <tabBarItem key="tabBarItem" title="Clientes" image="PersonasIcon" id="6Xs-hV-b3l"/>
                     <connections>
                         <outlet property="tableView" destination="H3e-uz-S6q" id="yeg-LS-61B"/>
                     </connections>
@@ -504,6 +504,7 @@
     </scenes>
     <resources>
         <image name="CloseIcon" width="24" height="24"/>
+        <image name="PersonasIcon" width="24" height="24"/>
         <image name="PhoneIcon" width="24" height="24"/>
         <image name="WorkIcon" width="24" height="24"/>
         <image name="starbucks" width="504" height="512"/>
