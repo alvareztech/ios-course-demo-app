@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A4734031F7CBB92006150E9 /* NuevoClienteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4734021F7CBB92006150E9 /* NuevoClienteTableViewController.swift */; };
 		6A640E301F7895C6005CEF16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A640E2F1F7895C6005CEF16 /* AppDelegate.swift */; };
 		6A640E321F7895C6005CEF16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A640E311F7895C6005CEF16 /* ViewController.swift */; };
 		6A640E351F7895C6005CEF16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A640E331F7895C6005CEF16 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A4734021F7CBB92006150E9 /* NuevoClienteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NuevoClienteTableViewController.swift; sourceTree = "<group>"; };
 		6A640E2C1F7895C6005CEF16 /* Course Demo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Course Demo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A640E2F1F7895C6005CEF16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A640E311F7895C6005CEF16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				6A640E471F78A39D005CEF16 /* ConctactoViewController.swift */,
 				6A680D801F79F6DD0073213C /* Persona.swift */,
 				6A8A71561F7A730600CAFB0F /* ClientesViewController.swift */,
+				6A4734021F7CBB92006150E9 /* NuevoClienteTableViewController.swift */,
 			);
 			path = "Course Demo App";
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				6A640E301F7895C6005CEF16 /* AppDelegate.swift in Sources */,
 				6A8A71571F7A730600CAFB0F /* ClientesViewController.swift in Sources */,
 				6A640E481F78A39D005CEF16 /* ConctactoViewController.swift in Sources */,
+				6A4734031F7CBB92006150E9 /* NuevoClienteTableViewController.swift in Sources */,
 				6A680D811F79F6DD0073213C /* Persona.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

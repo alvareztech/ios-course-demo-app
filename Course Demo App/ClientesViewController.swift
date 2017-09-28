@@ -50,4 +50,11 @@ class ClientesViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    
+    // Función de punto de retorno
+    @IBAction func unwindToClientes(unwindSegue: UIStoryboardSegue) {
+        
+    }
+    
+    
 }
