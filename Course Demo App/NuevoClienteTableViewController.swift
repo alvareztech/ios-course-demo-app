@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 class NuevoClienteTableViewController: UITableViewController {
     
@@ -28,7 +29,29 @@ class NuevoClienteTableViewController: UITableViewController {
     
     @IBAction func guardarCliente(_ sender: UIBarButtonItem) {
         
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
         
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Cliente", in: managedContext)!
+        
+        let cliente = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        cliente.setValue(nombresTextField.text, forKey: "nombres")
+        cliente.setValue(apellidosTextField.text, forKey: "apellidos")
+        cliente.setValue(representanteSwitch.isOn, forKey: "representante")
+        
+        do {
+            try managedContext.save()
+            
+            // cierra el view controller
+            dismiss(animated: true, completion: nil)
+            
+        } catch let error as NSError {
+            print("No se puede guardar. \(error), \(error.userInfo)")
+        }
         
     }
 }

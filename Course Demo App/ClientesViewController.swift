@@ -1,8 +1,9 @@
 import UIKit
+import CoreData
 
 class ClientesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var clientes: [Persona] = []
+    var clientes: [NSManagedObject] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -12,15 +13,6 @@ class ClientesViewController: UIViewController, UITableViewDelegate, UITableView
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
-        let persona1 = Persona(nombre: "Maria", ci: 6112231, teléfono: 77665544, correo: "maria@empresa.com")
-        let persona2 = Persona(nombre: "Julio", ci: 31263177, teléfono: 66229944, correo: "julio@empresa.com")
-        let persona3 = Persona(nombre: "Katherine", ci: 4123121, teléfono: 77221100, correo: "katherine@empresa.com")
-        
-        clientes.append(persona1)
-        clientes.append(persona2)
-        clientes.append(persona3)
         
     }
     
@@ -39,13 +31,13 @@ class ClientesViewController: UIViewController, UITableViewDelegate, UITableView
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "clienteCell", for: indexPath)
         
-        let persona: Persona = clientes[indexPath.row]
+        let persona: NSManagedObject = clientes[indexPath.row]
         
         let nombreLabel : UILabel = cell.viewWithTag(1) as! UILabel
         let ciLabel : UILabel = cell.viewWithTag(2) as! UILabel
         
-        nombreLabel.text = persona.nombre
-        ciLabel.text = String(persona.ci)
+        nombreLabel.text = persona.value(forKey: "nombres") as? String
+        ciLabel.text = persona.value(forKey: "apellidos") as? String
         
         return cell
     }
@@ -54,6 +46,27 @@ class ClientesViewController: UIViewController, UITableViewDelegate, UITableView
     // Función de punto de retorno
     @IBAction func unwindToClientes(unwindSegue: UIStoryboardSegue) {
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        obtenerTodosLosClientes()
+    }
+    
+    func obtenerTodosLosClientes() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Cliente")
+        
+        do {
+            clientes = try managedContext.fetch(fetchRequest)
+            tableView.reloadData()
+        } catch let error as NSError {
+            print("No se puede obtener los datos. \(error), \(error.userInfo)")
+        }
     }
     
     
