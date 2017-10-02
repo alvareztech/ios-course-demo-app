@@ -1,11 +1,12 @@
 import UIKit
 import CoreData
 
-class ClientesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ClientesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     var clientes: [Cliente] = []
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,6 +15,7 @@ class ClientesViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         
+        searchBar.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,8 +51,7 @@ class ClientesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        obtenerTodosLosClientes()
-        obtenerClientesPorNombre()
+        obtenerTodosLosClientes()
     }
     
     func obtenerTodosLosClientes() {
@@ -70,7 +71,7 @@ class ClientesViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    func obtenerClientesPorNombre() {
+    func obtenerClientesPorNombre(_ nombre: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -78,7 +79,7 @@ class ClientesViewController: UIViewController, UITableViewDelegate, UITableView
         let managedContext = appDelegate.persistentContainer.viewContext
         
         guard let model = managedContext.persistentStoreCoordinator?.managedObjectModel,
-            let fetchRequest = model.fetchRequestTemplate(forName: "ClientesPorNombre") as? NSFetchRequest<Cliente> else {
+            let fetchRequest = model.fetchRequestFromTemplate(withName: "ClientesPorNombre", substitutionVariables: ["abc": nombre]) as? NSFetchRequest<Cliente> else {
                 return
         }
         
@@ -87,6 +88,16 @@ class ClientesViewController: UIViewController, UITableViewDelegate, UITableView
             tableView.reloadData()
         } catch let error as NSError {
             print("No se puede obtener los datos. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("searchBar: \(searchText)")
+        
+        if searchText.characters.count > 0 {
+            obtenerClientesPorNombre(searchText)
+        } else {
+            obtenerTodosLosClientes()
         }
     }
     
