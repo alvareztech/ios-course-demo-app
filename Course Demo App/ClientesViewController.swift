@@ -49,7 +49,8 @@ class ClientesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        obtenerTodosLosClientes()
+//        obtenerTodosLosClientes()
+        obtenerClientesPorNombre()
     }
     
     func obtenerTodosLosClientes() {
@@ -69,5 +70,24 @@ class ClientesViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    func obtenerClientesPorNombre() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        guard let model = managedContext.persistentStoreCoordinator?.managedObjectModel,
+            let fetchRequest = model.fetchRequestTemplate(forName: "ClientesPorNombre") as? NSFetchRequest<Cliente> else {
+                return
+        }
+        
+        do {
+            clientes = try managedContext.fetch(fetchRequest)
+            tableView.reloadData()
+        } catch let error as NSError {
+            print("No se puede obtener los datos. \(error), \(error.userInfo)")
+        }
+    }
     
 }
