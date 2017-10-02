@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Cliente" representedClassName="Cliente" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="17A365" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Cliente" representedClassName="Cliente" syncable="YES">
         <attribute name="apellidos" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nombres" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="representante" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>

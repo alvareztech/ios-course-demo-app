@@ -37,11 +37,11 @@ class NuevoClienteTableViewController: UITableViewController {
         
         let entity = NSEntityDescription.entity(forEntityName: "Cliente", in: managedContext)!
         
-        let cliente = NSManagedObject(entity: entity, insertInto: managedContext)
+        let cliente = Cliente(entity: entity, insertInto: managedContext)
         
-        cliente.setValue(nombresTextField.text, forKey: "nombres")
-        cliente.setValue(apellidosTextField.text, forKey: "apellidos")
-        cliente.setValue(representanteSwitch.isOn, forKey: "representante")
+        cliente.nombres = nombresTextField.text
+        cliente.apellidos = apellidosTextField.text
+        cliente.representante = representanteSwitch.isOn
         
         do {
             try managedContext.save()

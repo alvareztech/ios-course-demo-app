@@ -3,7 +3,7 @@ import CoreData
 
 class ClientesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var clientes: [NSManagedObject] = []
+    var clientes: [Cliente] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,13 +31,13 @@ class ClientesViewController: UIViewController, UITableViewDelegate, UITableView
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "clienteCell", for: indexPath)
         
-        let persona: NSManagedObject = clientes[indexPath.row]
+        let persona: Cliente = clientes[indexPath.row]
         
         let nombreLabel : UILabel = cell.viewWithTag(1) as! UILabel
         let ciLabel : UILabel = cell.viewWithTag(2) as! UILabel
         
-        nombreLabel.text = persona.value(forKey: "nombres") as? String
-        ciLabel.text = persona.value(forKey: "apellidos") as? String
+        nombreLabel.text = persona.nombres
+        ciLabel.text = persona.apellidos
         
         return cell
     }
@@ -59,7 +59,7 @@ class ClientesViewController: UIViewController, UITableViewDelegate, UITableView
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Cliente")
+        let fetchRequest = NSFetchRequest<Cliente>(entityName: "Cliente")
         
         do {
             clientes = try managedContext.fetch(fetchRequest)
