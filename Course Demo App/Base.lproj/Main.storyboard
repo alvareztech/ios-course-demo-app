@@ -428,6 +428,71 @@
             </objects>
             <point key="canvasLocation" x="972" y="1588"/>
         </scene>
+        <!--Colegios-->
+        <scene sceneID="R85-Es-1Jm">
+            <objects>
+                <tableViewController id="2lq-aM-xzV" customClass="ColegiosTableViewController" customModule="Course_Demo_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="vNd-Km-6CZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="colegioCell" rowHeight="150" id="w7t-0N-5nM">
+                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w7t-0N-5nM" id="lr9-fk-5Fb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8nu-H2-h6w">
+                                            <rect key="frame" x="16" y="8.5" width="343" height="122.5"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="library" translatesAutoresizingMaskIntoConstraints="NO" id="d7T-yz-hih">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="5JO-GX-iEB"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FW7-hr-NkZ">
+                                                    <rect key="frame" x="0.0" y="54" width="343" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esta es una dirección de ejemplo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YB-nt-kLA">
+                                                    <rect key="frame" x="0.0" y="82" width="343" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distrito" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNS-JI-Dgj">
+                                                    <rect key="frame" x="0.0" y="105.5" width="343" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8nu-H2-h6w" firstAttribute="leading" secondItem="lr9-fk-5Fb" secondAttribute="leading" constant="16" id="H50-At-ys5"/>
+                                        <constraint firstAttribute="trailing" secondItem="8nu-H2-h6w" secondAttribute="trailing" constant="16" id="L4C-ZT-Ywn"/>
+                                        <constraint firstItem="8nu-H2-h6w" firstAttribute="top" secondItem="lr9-fk-5Fb" secondAttribute="top" constant="8" id="mHK-2O-Ufv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2lq-aM-xzV" id="l6K-2i-P2S"/>
+                            <outlet property="delegate" destination="2lq-aM-xzV" id="8pJ-s2-qvu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Colegios" id="qv8-Gg-u9Y"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVi-nR-gxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2852" y="1797.7511244377813"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="lw5-hm-iab">
             <objects>
@@ -478,6 +543,7 @@
                         <segue destination="HhQ-Hb-TAD" kind="relationship" relationship="viewControllers" id="AtI-Ri-viC"/>
                         <segue destination="NRW-dD-5Ec" kind="relationship" relationship="viewControllers" id="pgv-yp-asG"/>
                         <segue destination="scC-Gl-o7J" kind="relationship" relationship="viewControllers" id="9pe-7x-VUl"/>
+                        <segue destination="eXK-CO-fFs" kind="relationship" relationship="viewControllers" id="zx0-Mx-rbr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6XR-N0-hrl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -670,13 +736,34 @@
             </objects>
             <point key="canvasLocation" x="3696.8000000000002" y="1114.992503748126"/>
         </scene>
+        <!--Colegios-->
+        <scene sceneID="Gy6-Jc-FGZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eXK-CO-fFs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Colegios" image="SchoolIcon" id="GGz-53-e3n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hb2-P7-miR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2lq-aM-xzV" kind="relationship" relationship="rootViewController" id="Jh2-a1-CIV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A9V-4e-yr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1912.8" y="1797.7511244377813"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AddPersonaIcon" width="24" height="24"/>
         <image name="CloseIcon" width="24" height="24"/>
         <image name="PersonasIcon" width="24" height="24"/>
         <image name="PhoneIcon" width="24" height="24"/>
+        <image name="SchoolIcon" width="30" height="30"/>
         <image name="WorkIcon" width="24" height="24"/>
+        <image name="library" width="120" height="120"/>
         <image name="starbucks" width="504" height="512"/>
     </resources>
 </document>
