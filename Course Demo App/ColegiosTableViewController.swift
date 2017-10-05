@@ -7,8 +7,16 @@ class ColegiosTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let coleEjemplo = Colegio(nombre: "Mi Colegio", departamento: "La Paz", zona: "La Paz", direccion: "z. Sopocachi c. 123", distrito: "ABC", latitud: 0, longitud: 0)
-        colegios.append(coleEjemplo)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        GobService.obtenerColegios(resourceId: "b5da4242-1c90-47d9-b98f-bde1f35a0764", limit: 20) { (colegios: [Colegio]) in
+            print("colegios: \(colegios)")
+            self.colegios = colegios
+            self.tableView.reloadData()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
