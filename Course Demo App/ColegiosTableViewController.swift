@@ -6,17 +6,10 @@ class ColegiosTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        GobService.obtenerColegios(resourceId: "b5da4242-1c90-47d9-b98f-bde1f35a0764", limit: 20) { (colegios: [Colegio]) in
-            print("colegios: \(colegios)")
-            self.colegios = colegios
-            self.tableView.reloadData()
-        }
-        
+        obtenerColegiosServicio()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +40,24 @@ class ColegiosTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    
+    @IBAction func refreshControlActivated(_ sender: UIRefreshControl) {
+        obtenerColegiosServicio()
+    }
+    
+    func obtenerColegiosServicio() {
+        self.refreshControl?.beginRefreshing()
+        
+        GobService.obtenerColegios(resourceId: "b5da4242-1c90-47d9-b98f-bde1f35a0764", limit: 20) { (colegios: [Colegio]) in
+            
+            self.refreshControl?.endRefreshing()
+            
+            print("colegios: \(colegios)")
+            self.colegios = colegios
+            self.tableView.reloadData()
+        }
     }
 
 }

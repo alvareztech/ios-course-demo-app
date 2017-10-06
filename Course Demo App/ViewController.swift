@@ -37,6 +37,8 @@ class ViewController: UIViewController {
         
         // Si llegamos hasta aquí, se cumplieron las validaciones
         
+        Preferencias.guardarCorreo(correo: email)
+        
         performSegue(withIdentifier: "miSegue", sender: nil)
         
     }
@@ -75,6 +77,8 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear Log In")
+        
+        emailTextField.text = Preferencias.obtenerCorreo()
     }
     
     override func viewDidAppear(_ animated: Bool) {
