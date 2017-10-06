@@ -30,6 +30,8 @@
 		6AB33CB01F8653AC0037D5B9 /* Preferencias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB33CAF1F8653AC0037D5B9 /* Preferencias.swift */; };
 		6AB33CB31F8654470037D5B9 /* MiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB33CB21F8654470037D5B9 /* MiButton.swift */; };
 		6AB33CB51F86548E0037D5B9 /* Colores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB33CB41F86548E0037D5B9 /* Colores.swift */; };
+		6AD350FD1F8745A400806237 /* OtroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD350FC1F8745A400806237 /* OtroService.swift */; };
+		6AD350FF1F8745F000806237 /* SimpleRespuesta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD350FE1F8745F000806237 /* SimpleRespuesta.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		6AB33CAF1F8653AC0037D5B9 /* Preferencias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferencias.swift; sourceTree = "<group>"; };
 		6AB33CB21F8654470037D5B9 /* MiButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiButton.swift; sourceTree = "<group>"; };
 		6AB33CB41F86548E0037D5B9 /* Colores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colores.swift; sourceTree = "<group>"; };
+		6AD350FC1F8745A400806237 /* OtroService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtroService.swift; sourceTree = "<group>"; };
+		6AD350FE1F8745F000806237 /* SimpleRespuesta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleRespuesta.swift; sourceTree = "<group>"; };
 		D089C6F289A4561AE6BD0540 /* Pods-Course Demo App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Course Demo App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Course Demo App/Pods-Course Demo App.debug.xcconfig"; sourceTree = "<group>"; };
 		EB4C40879FC44C1751A3A795 /* Pods_Course_Demo_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Course_Demo_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,6 +91,8 @@
 			children = (
 				6A0E8AD11F8353DD0058A37A /* Constantes.swift */,
 				6A0E8AD31F8354330058A37A /* GobService.swift */,
+				6AD350FC1F8745A400806237 /* OtroService.swift */,
+				6AD350FE1F8745F000806237 /* SimpleRespuesta.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -258,10 +264,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Course Demo App/Pods-Course Demo App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -309,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A0E8ACF1F834E5E0058A37A /* Colegio.swift in Sources */,
+				6AD350FD1F8745A400806237 /* OtroService.swift in Sources */,
 				6A640E321F7895C6005CEF16 /* ViewController.swift in Sources */,
 				6AB33CB01F8653AC0037D5B9 /* Preferencias.swift in Sources */,
 				6A640E441F789B76005CEF16 /* PuntosViewController.swift in Sources */,
@@ -324,6 +333,7 @@
 				6A8A71571F7A730600CAFB0F /* ClientesViewController.swift in Sources */,
 				6A640E481F78A39D005CEF16 /* ConctactoViewController.swift in Sources */,
 				6A4803A91F7E6ED50050BCB2 /* Model.xcdatamodeld in Sources */,
+				6AD350FF1F8745F000806237 /* SimpleRespuesta.swift in Sources */,
 				6A4734031F7CBB92006150E9 /* NuevoClienteTableViewController.swift in Sources */,
 				6A50C44A1F8209D200D7BD1B /* Cliente+CoreDataClass.swift in Sources */,
 				6A680D811F79F6DD0073213C /* Persona.swift in Sources */,

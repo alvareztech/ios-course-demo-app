@@ -8,5 +8,6 @@ target 'Course Demo App' do
   # Pods for Course Demo App
 
   pod 'Alamofire', '~> 4.5'
+  pod 'SwiftKeychainWrapper', '~> 3.0.1'
 
 end

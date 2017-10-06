@@ -5,12 +5,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var progressActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var logInButton: MiButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         print("viewDidLoad Log In")
+        
+        self.logInButton.isHidden = false
+        self.progressActivityIndicator.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,22 +31,39 @@ class ViewController: UIViewController {
         let email = emailTextField.text!
         let password = passwordTextField.text!
         
-        if !esEmailValido(email: email) {
-            messageLabel.text = "Correo electrónico no válido"
-            return
-        }
+//        if !esEmailValido(email: email) {
+//            messageLabel.text = "Correo electrónico no válido"
+//            return
+//        }
         
-        if !esPasswordValido(password: password) {
-            messageLabel.text = "Contraseña no válida"
-            return
-        }
+//        if !esPasswordValido(password: password) {
+//            messageLabel.text = "Contraseña no válida"
+//            return
+//        }
         
         // Si llegamos hasta aquí, se cumplieron las validaciones
         
         Preferencias.guardarCorreo(correo: email)
+        Preferencias.guardarPassword(password: password)
         
-        performSegue(withIdentifier: "miSegue", sender: nil)
+        logInButton.isHidden = true
+        progressActivityIndicator.isHidden = false
         
+        OtroService.autenticar(username: email, password: password) { (result: SimpleRespuesta) in
+            
+            self.logInButton.isHidden = false
+            self.progressActivityIndicator.isHidden = true
+            
+            if result.exito {
+                print("Mensaje: \(result.mensaje)")
+                
+                self.performSegue(withIdentifier: "miSegue", sender: nil)
+            
+            } else {
+                print("Mensaje: \(result.mensaje)")
+            }
+            
+        }
     }
     
     
@@ -79,6 +102,7 @@ class ViewController: UIViewController {
         print("viewWillAppear Log In")
         
         emailTextField.text = Preferencias.obtenerCorreo()
+        passwordTextField.text = Preferencias.obtenerPassword()
     }
     
     override func viewDidAppear(_ animated: Bool) {
